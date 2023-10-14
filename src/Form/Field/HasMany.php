@@ -488,7 +488,7 @@ class HasMany extends Field
          * {count} is increment number of current sub form count.
          */
         $script = <<<EOT
-var index = 0;
+var index = $('.has-many-{$this->column}-forms').children().length;
 $('#has-many-{$this->column}').off('click', '.add').on('click', '.add', function () {
 
     var tpl = $('template.{$this->column}-tpl');
